@@ -24,5 +24,6 @@ RUN echo "===> Installing  tools..."  && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /opt/wrk/
 
 WORKDIR /data
-USER 1001    
+USER 1001
+CMD ping localhost
 
