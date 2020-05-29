@@ -25,6 +25,4 @@ RUN echo "===> Installing  tools..."  && \
 
 WORKDIR /data
 USER 1001
-ENTRYPOINT ["wrk"]
-CMD ["--help"]
-
+ENTRYPOINT ["tail", "-f", "/dev/null"]
