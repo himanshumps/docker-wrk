@@ -17,7 +17,7 @@ RUN echo "===> Installing  tools..."  && \
        tar zx --strip 1 && \
     make && \
     cp wrk /usr/local/bin/ && \
-    \
+    chmod 777 /usr/local/bin/wrk \
     echo "===> Cleaning the system" && \
     apt-get -f -y --auto-remove remove build-essential curl && \
     apt-get clean && \
@@ -25,5 +25,6 @@ RUN echo "===> Installing  tools..."  && \
 
 WORKDIR /data
 USER 1001
-CMD ping localhost
+ENTRYPOINT ["wrk"]
+CMD ["--help"]
 
